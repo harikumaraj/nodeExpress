@@ -16,8 +16,8 @@ export const userFindById = (_id) => {
         .select('_id firstName lastName email username phoneNo');
 };
 
-export const userFind = ({ username, password }) => {
-    return User.find({ username })
+export const userFind = ({ username, email, phoneNo, password }) => {
+    return User.find({$or: [{username}, {email}, {phoneNo}]})
         .then((data) => {
             if (data.length > 0) {
                 const user = data[0];
