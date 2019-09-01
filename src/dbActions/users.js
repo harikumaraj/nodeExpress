@@ -8,12 +8,12 @@ const saltRounds = 10;
 
 export const userFindAll = () => {
     return User.find()
-        .select('_id firstName lastName email username');
+        .select('_id firstName lastName email username phoneNo');
 };
 
 export const userFindById = (_id) => {
     return User.findById(_id)
-        .select('_id firstName lastName email');
+        .select('_id firstName lastName email username phoneNo');
 };
 
 export const userFind = ({ username, password }) => {
@@ -51,6 +51,7 @@ export const userSave = (data) => {
 };
 
 export const userUpdate = (_id, userObject) => {
+    console.log(_id, userObject)
     return User.update({ _id }, userObject)
         .then(() => {
             return userFindById(_id);

@@ -37,15 +37,16 @@ router.post('/login', (req, res, next) => {
         .then(result => {
             const token = sign(
                 {
-                    email: result.email,
-                    _id: result._id,
+                    _id: result._id
                 },
                 process.env.JWT_KEY,
                 {
                     expiresIn: '1h',
                 }
             );
-            res.status(200).json({token, ...result});
+            res.status(200)
+            .header('Authorisation', `Bearer ${token}`)
+            .json({token, ...result});
         })
         .catch(error => {
             next(error);

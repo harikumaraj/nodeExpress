@@ -63,7 +63,7 @@ router.patch('/', (req, res, next) => {
     userUpdate(body._id, userObject)
         .then(result => {
             userFindById(body._id).then(data => {
-                res.status(200).json({ data });
+                res.status(200).json(data);
             })
                 .catch(error => {
                     next(error);

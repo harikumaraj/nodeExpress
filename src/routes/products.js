@@ -89,7 +89,7 @@ router.patch('/', (req, res, next) => {
     productUpdate(body._id, productObject)
         .then(result => {
             productFindById(body._id).then(data => {
-                res.status(200).json({ data });
+                res.status(200).json(data);
             })
                 .catch(error => {
                     next(error);
