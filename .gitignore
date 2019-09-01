@@ -61,4 +61,4 @@ typings/
 .next
 
 # additional files @author Hari
-dist
+dist/
