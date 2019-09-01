@@ -52,13 +52,11 @@ typings/
 *.tgz
 
 # Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
+.yarn-Integrity
 
 # next.js build output
 .next
 
 # additional files @author Hari
 dist/
+package-lock.json
