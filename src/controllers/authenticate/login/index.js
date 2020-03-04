@@ -1,5 +1,5 @@
 import { sign } from 'jsonwebtoken';
-import constants from '../../../constants';
+import {JWT_KEY} from '../../../constants';
 
 import {userFind} from '../../../dbActions/users';
 
@@ -13,7 +13,7 @@ export default (req, res, next) => {
                 {
                     _id: result._id
                 },
-                constants.JWT_KEY,
+                JWT_KEY,
                 {
                     expiresIn: '1h',
                 }

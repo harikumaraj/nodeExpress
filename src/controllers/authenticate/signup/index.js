@@ -8,11 +8,8 @@ export default (req, res, next) => {
         if (users.length > 0) {
             res.status(404).json({ message: 'Email already exists' });
         }
-        const payload = {
-            ...body,
-            username: `${body.firstName}${body.lastName}`,
-        };
-        return userSave(payload)
+        // if ()
+        return userSave(body)
             .then(result => {
                 res.status(200).json(result);
             });

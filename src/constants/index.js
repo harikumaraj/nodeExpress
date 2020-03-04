@@ -1,5 +1,4 @@
-export default {
-    'PORT': '3000',
-    'DB_URL': 'mongodb+srv://node_express:test123@cluster-uq0ef.mongodb.net/test?retryWrites=true&w=majority',
-    'JWT_KEY': 'random stuff'
-};
+import {PORT, JWT_KEY, DB_URL} from "./configs";
+import {ROLES} from "./roles";
+
+export {PORT, JWT_KEY, DB_URL, ROLES};

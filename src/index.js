@@ -2,9 +2,9 @@ import http from 'http';
 
 import app from './app';
 
-import condtants from './constants';
+import {PORT} from './constants';
 
-const port = condtants.PORT || 3000;
+const port = PORT || 3000;
 
 const server = http.createServer(app);
 

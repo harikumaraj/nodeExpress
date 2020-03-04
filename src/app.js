@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import {config} from 'dotenv';
 
-import constants from './constants';
+import {DB_URL} from './constants';
 
 import products from './routes/products';
 
@@ -16,7 +16,7 @@ import root from './routes/authenticate';
 
 config();
 
-mongoose.connect(constants.DB_URL, { useNewUrlParser: true });
+mongoose.connect(DB_URL, { useNewUrlParser: true });
 
 const app = express();
 
